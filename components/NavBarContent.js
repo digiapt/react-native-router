@@ -53,14 +53,14 @@ var NavBarContent = React.createClass({
   },
 
   render() {
-    var transitionStyle = { 
+    var transitionStyle = {
       opacity: this.getTweeningValue('opacity'),
     };
 
     var leftCorner;
     var rightCorner;
     var titleComponent;
-    
+
 
     /**
      * Set leftCorner
@@ -70,9 +70,9 @@ var NavBarContent = React.createClass({
 
     if (this.props.route.leftCorner) {
       var LeftCorner = this.props.route.leftCorner;
-      leftCornerContent = <LeftCorner toRoute={this.goForward} customAction={this.customAction} />;
+      leftCornerContent = <LeftCorner toRoute={this.goForward} customAction={this.customAction} navigator={this.props.navigator}/>;
     } else if (this.props.route.index > 0) {
-      leftCornerContent = <NavButton onPress={this.goBack} backButtonComponent={this.props.backButtonComponent} />;
+      leftCornerContent = <NavButton onPress={this.goBack} backButtonComponent={this.props.backButtonComponent} navigator={this.props.navigator}/>;
     }
 
     leftCorner = (
@@ -88,7 +88,7 @@ var NavBarContent = React.createClass({
 
     if (this.props.route.rightCorner || this.props.rightCorner) {
       var RightCorner = this.props.route.rightCorner || this.props.rightCorner;
-      rightCornerContent = <RightCorner toRoute={this.goForward} customAction={this.customAction} />;
+      rightCornerContent = <RightCorner toRoute={this.goForward} customAction={this.customAction} navigator={this.props.navigator}/>;
     }
 
     rightCorner = (
