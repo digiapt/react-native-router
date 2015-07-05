@@ -43,21 +43,23 @@ var NavBarContainer = React.createClass({
   render: function() {
     return (
       <View style={[styles.navbarContainer, this.props.style]}>
-        <NavBarContent 
-          route={this.state.previousRoute} 
+        <NavBarContent
+          route={this.state.previousRoute}
           backButtonComponent={this.props.backButtonComponent}
           rightCorner={this.props.rightCorner}
           titleStyle={this.props.titleStyle}
-          willDisappear="true" 
+          navigator={this.props.navigator}
+          willDisappear="true"
         />
-        <NavBarContent 
-          route={this.props.currentRoute} 
+        <NavBarContent
+          route={this.props.currentRoute}
           backButtonComponent={this.props.backButtonComponent}
           rightCorner={this.props.rightCorner}
           titleStyle={this.props.titleStyle}
           goBack={this.goBack}
           goForward={this.goForward}
           customAction={this.customAction}
+          navigator={this.props.navigator}
         />
       </View>
     )
