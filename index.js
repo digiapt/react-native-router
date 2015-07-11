@@ -46,7 +46,7 @@ var Router = React.createClass({
   },
 
   customAction: function(opts) {
-    this.props.customAction(opts);
+    this.props.customAction(opts, this);
   },
 
   renderScene: function(route, navigator) {
